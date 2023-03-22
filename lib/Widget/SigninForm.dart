@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_practice/screens/ProfileScreen.dart';
 
 class SignInForm extends StatefulWidget {
   const SignInForm({super.key});
@@ -59,10 +60,15 @@ class _SignInFormState extends State<SignInForm> {
                 padding: const EdgeInsets.symmetric(vertical: 16.0),
                 child: ElevatedButton(
                   onPressed: () {
-                    if (_formKey.currentState!.validate()) {
-                      // TODO : callback function and write logic accordingly in signup and signin screen
-                      // widget.onSubmit();
-                    }
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const ProfileScreen()));
+
+                    // if (_formKey.currentState!.validate()) {
+                    //   // TODO : callback function and write logic accordingly in signup and signin screen
+                    //   // widget.onSubmit();
+                    // }
                   },
                   child: const Text("Signin"),
                 ),
