@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
               titleLarge: TextStyle(fontSize: 36, fontStyle: FontStyle.italic),
               bodyMedium: TextStyle(
                   fontSize: 14, fontFamily: 'Hind', color: Color(0XFF212121)))),
-      home: SignUpScreen(),
+      home: const SignUpScreen(),
     );
   }
 }
