@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
@@ -8,8 +7,31 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Sign Up")),
-      body: Container(child: Text("Sign Up Screen")),
+      appBar: AppBar(
+        title: const Text('Signup'),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            AuthForm(
+              action: 'Signup',
+              onSubmit: singup,
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const SignInScreen()));
+              },
+              child: const Text(
+                "Already a user?\nSignin instead",
+                textAlign: TextAlign.center,
+              ),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
